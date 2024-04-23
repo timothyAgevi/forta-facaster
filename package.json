@@ -1,0 +1,25 @@
+{
+  "name": "fotra-frame",
+  "version": "1.0.0",
+  "description": "bot that fetches scam alerts and posts them as frames",
+  "main": "dist/index.js",
+  "repository": "https://github.com/timothyAgevi/forta-facaster.git",
+  "author": "timothyAgevi <timothyagevi@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
+    "dev": "ts-node src/server.ts"
+  },
+  "dependencies": {
+    "axios": "^1.6.8",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.12.7",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.4.5"
+  }
+}
