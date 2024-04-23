@@ -12,16 +12,23 @@ app.get('/', (req: Request, res: Response) => {
 });
 
 app.post('/webhook', async (req: Request, res: Response) => {
+    // Assuming webhookData may contain a specific webhook_id you might want to override
     const webhookData = req.body;
     console.log('Received webhook:', webhookData);
 
+    // Use the WEBHOOK_ID environment variable or fall back to the provided webhook_id in the request body
+    const webhookId = process.env.WEBHOOK_ID || webhookData.webhook_id;
+
     try {
-        const webhookInfo = await fetchWebhook(webhookData.webhook_id);
+        const webhookInfo = await fetchWebhook(webhookId);
         console.log('Webhook Info:', webhookInfo);
 
         const frameResponse = await createFrame({
             name: "New Frame from Webhook",
-            pages: [{ title: "Main Page", content: "Content based on webhook data" }]
+            pages: [{
+                title: "Main Page",
+                content: "Content based on webhook data"
+            }]
         });
 
         console.log('Frame created:', frameResponse);
@@ -32,7 +39,7 @@ app.post('/webhook', async (req: Request, res: Response) => {
     }
 });
 
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3030;
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
 });

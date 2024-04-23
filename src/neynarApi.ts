@@ -2,7 +2,7 @@ import axios from 'axios';
 import { Response } from 'express';
 
 const API_KEY = process.env.NEYNAR_API_KEY;
-const API_BASE_URL = 'https://api.neynar.com/v2/farcaster';
+const API_BASE_URL = process.env.API_BASE_URL;
 
 export const fetchWebhook = async (webhookId: string): Promise<any> => {
     const response = await axios.get(`${API_BASE_URL}/webhook`, {
