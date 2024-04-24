@@ -24,14 +24,6 @@ The Scam Alert Farcaster Bot is an automated tool that integrates with the Forta
 The bot attaches an image to the frame for a visual cue of the scam alert and structures the information to be easily readable.
 
 > **Note**: The image used for the alert presentation can be seen in the repository's 'images' directory.
-
-## Setup and Configuration
-
-To set up the Scam Alert Farcaster Bot, run the following commands:
-
-```bash
-npm build
-npm run start
 ##Video demo
 [demo](https://www.loom.com/share/111c26e6d6b544d6bc00896b3299a89b?sid=8631ba4b-ff8d-44db-845f-c5ff5a00f99b)
 
@@ -40,4 +32,12 @@ MIT
 
 ##Contributions
 We welcome contributions from the community. If you'd like to contribute, please fork the repository and use a feature branch. Pull requests are warmly welcome.
-License
+
+## Setup and Configuration
+
+To set up the Scam Alert Farcaster Bot, run the following commands:
+
+```bash
+npm build
+npm run start
+
